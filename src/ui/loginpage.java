@@ -4,6 +4,9 @@
  */
 package ui;
 
+import businesslayer.User;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author it world
@@ -40,7 +43,18 @@ public class loginpage extends javax.swing.JFrame {
 
         jLabel2.setText("password:");
 
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
         jButton1.setText("login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("switch to admin");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -51,7 +65,7 @@ public class loginpage extends javax.swing.JFrame {
 
         jLabel3.setBackground(new java.awt.Color(102, 255, 102));
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
-        jLabel3.setText("                           User ");
+        jLabel3.setText("                  Sales Assistant");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,6 +119,31 @@ public class loginpage extends javax.swing.JFrame {
         dispose();
         new adminlogin().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if ((jTextField1.getText().trim().isEmpty()) || (jTextField2.getText().trim().isEmpty())) {
+          JOptionPane.showMessageDialog(loginpage.this,"kindly enter the details");
+          return;
+        }
+        User a=new User("x","x","x");
+       boolean flag= a.validatesa(jTextField1.getText(), jTextField2.getText());
+       System.out.println(flag);
+       if(flag==false)
+       {
+          JOptionPane.showMessageDialog(loginpage.this,"incorrect username or password");
+          return;
+       }
+       else
+       {
+           dispose();
+           new SA_dashboard().setVisible(true);
+       }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
