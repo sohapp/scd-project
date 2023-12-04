@@ -38,6 +38,7 @@ public class loginpage extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 255, 204));
 
         jLabel1.setText(" username:");
 
@@ -63,7 +64,7 @@ public class loginpage extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setBackground(new java.awt.Color(102, 255, 102));
+        jLabel3.setBackground(new java.awt.Color(153, 255, 204));
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
         jLabel3.setText("                  Sales Assistant");
 

@@ -4,6 +4,9 @@
  */
 package ui;
 
+import businesslayer.User;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author it world
@@ -44,6 +47,11 @@ public class adminlogin extends javax.swing.JFrame {
         jLabel3.setText("                      Admin ");
 
         jButton1.setText("login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("login as user");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -103,6 +111,24 @@ public class adminlogin extends javax.swing.JFrame {
         dispose();
         new loginpage().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         if ((jTextField1.getText().trim().isEmpty()) || (jTextField2.getText().trim().isEmpty())) {
+          JOptionPane.showMessageDialog(adminlogin.this,"kindly enter the details");
+          return;
+        }
+        if(new User("x","x","x").validatemanager(jTextField1.getText(), jTextField2.getText()))
+        {
+            dispose ();
+            new managerdashboard().setVisible(true);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(adminlogin.this,"incorrect username or password");
+          return;
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -51,4 +51,19 @@ public class User {
         }
         return flag;
     }
+     public boolean validatemanager(String a, String b) {
+        Dao A = new Mysqldb();
+        boolean flag = false;
+        LinkedList<User> B = A.getuser();
+        for (User x : B) {
+            System.out.println(x.getusername()+x.getpassword()+x.getrole());
+            System.out.println(a+b+"SalesAssistant");
+            if ((x.getusername().equals(a)) && (x.getpassword().equals(b)) && ("Manager".equals(x.getrole()))) {
+                
+                System.out.println("i am here");
+                return true;
+            }
+        }
+        return flag;
+    }
 }

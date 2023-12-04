@@ -4,6 +4,8 @@
  */
 package businesslayer;
 
+import DAO.Dao;
+import DAO.Mysqldb;
 import java.util.LinkedList;
 
 /**
@@ -23,6 +25,19 @@ public class Product {
        code=u;
        categorycode=pp;
     }
+    public void insert(){
+    
+           Dao a= new Mysqldb();
+           //a.insertproduct(this);
+           a.insertProduct1(this);
+    }
+   // public void delete(int ){
+        
+       
+   // }
+           
+    
+
     public int getcategorycode(){
        return categorycode; 
     }

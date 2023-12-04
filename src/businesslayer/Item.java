@@ -11,13 +11,39 @@ import java.util.LinkedList;
  * @author it world
  */
 public class Item {
+
     private int quantityordered;
     private float price;
-    private Product product;
-    public Item(int a,float b,Product c){
-        quantityordered=a;
-        price=b;
-        product=c;
+    private String product;
+
+    public Item(int a, float b, String c) {
+        quantityordered = a;
+        price = b;
+        product = c;
     }
-    
+
+    public String getname() {
+
+        return product;
+    }
+
+    public int getquantityordered() {
+
+        return quantityordered;
+    }
+    public void updateprice()
+    {
+        price=price+price;
+    }
+    public void updatequantityordered(int a){
+        
+        quantityordered=quantityordered+a;
+    }
+    public void updatestock(int a){
+        ///needs to be updated
+        //product.updatestock(a);
+    }
+    public float getprice() {
+        return price;
+    }
 }

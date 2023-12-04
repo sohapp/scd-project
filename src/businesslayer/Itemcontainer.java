@@ -11,6 +11,6 @@ package businesslayer;
 public interface Itemcontainer {
     public void add(Item a);
     public void remove(Item a);
-    public void  update(Item a,int quantity);
+    public boolean  update(String Itemname);
     public float total();
 }
